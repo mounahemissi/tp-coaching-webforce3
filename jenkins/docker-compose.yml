@@ -1,0 +1,42 @@
+---
+version: '3.3'
+
+volumes:
+  jmeter_dir:
+  jenkins-home:
+
+networks:
+  prodnetwork:
+    driver: bridge
+services:
+ jenkins:
+  hostname: jenkins
+  build: ./jenkins
+  ports:
+    - "18080:8080"
+    - "50000:50000"
+  networks:
+    - prodnetwork
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /usr/bin/docker:/usr/bin/docker
+    - jenkins-home:/var/jenkins_home
+    - jmeter_dir:/jmeter
+  depends_on:
+    - jmeter
+
+ jmeter:
+  hostname: jmeter
+  build: ./jmeter
+  command: tail -f /dev/null
+  networks:
+    - prodnetwork
+  volumes:
+    - jmeter_dir:/jmeter
+    - /opt/jmeter/results:/results
+    - /opt/jmeter/scripts:/scripts
+
+
+
+
+

@@ -196,6 +196,16 @@ volumes:
       - data:/bitnami/postgresql
 ```
 
+# TP Jenkins
+## Installez Jenkins
+Allez dans la directory ~/tp-coaching-webforce3/jenkins  
+Faire ```docker-compose up -d```
+
+## Exercice Jenkins 1  
+
+1. Analysez le code du fichier docker-compose.yml 
+2. Pourquoi je partage le fichier socket de docker avec le container Jenkins ? 
+
 
 
 

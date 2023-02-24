@@ -197,14 +197,37 @@ volumes:
 ```
 
 # TP Jenkins
-## Installez Jenkins
+## Installation des containers Jenkins et JMeter
 Allez dans la directory ~/tp-coaching-webforce3/jenkins  
+Faire ``` source ../venv/bin/activate```
 Faire ```docker-compose up -d```
 
 ## Exercice Jenkins 1  
 
 1. Analysez le code du fichier docker-compose.yml 
 2. Pourquoi je partage le fichier socket de docker avec le container Jenkins ? 
+
+## Configuration de Jenkins 
+Ouvrir votre navigateur et entrez l'url ```http://<ip_adresse_fournie>:30050```  
+Rechercher le mot de passe admin de jenkins dans le container jenkins   
+la commande est ```docker logs jenkins_jenkins_1 ```  
+le mot de passe est une chaine de caracteres entre les lignes avec des etoiles    
+**NE PAS INSTALLER DE PLUGINS, CLICKER sur la croix en haut a droite de la fenetre customize jenkins**  
+et apres selectionner start jenkins
+
+## Exercice Jenkins 2 : Creer un repo github app-blogs
+1. Creer un repo app-blogs dans votre compte github personnel.     
+2. Selectionner, README.md, .gitignore template python, Licence MIT.      
+3. git clone de ce repo en local et ouvrez le repo avec goland.   
+4. Copiez votre dockerfile de l'exercice 8 dans ce repo.     
+5. Ajoutez les fichiers necessaires pour faire un docker build de l'image app-blogs.  
+
+
+
+
+
+
+
 
 
 

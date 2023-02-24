@@ -13,7 +13,7 @@ services:
   hostname: jenkins
   build: ./jenkins
   ports:
-    - "18080:8080"
+    - "30050:8080"
     - "50000:50000"
   networks:
     - prodnetwork

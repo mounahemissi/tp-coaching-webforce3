@@ -81,5 +81,11 @@ app.run(host='localhost', debug=True)
 Vérifier avec votre navigateur en utilisant l'url `http://<ip_de_votre_vm>:30101/blogs`
 ![Capture d’écran 2023-03-03 à 16 06 29](https://user-images.githubusercontent.com/122799093/222755022-1b190b87-cebd-40b6-9a8b-feb6745239c9.png)
 # Exercice 6  - Pare-feu
-rouvez la commande de gestion du firewall sous ubuntu 20.04:
-`sudo ufw 
+trouvez la commande de gestion du firewall sous ubuntu 20.04:
+`sudo ufw`
+Fermer le port 5000
+  `sudo ufw deny 5000`
+  
+Autoriser le port 30101
+  `sudo ufw allow 30101`
+  

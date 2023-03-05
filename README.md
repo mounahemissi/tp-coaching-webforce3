@@ -64,18 +64,16 @@ Dans PyCharm allez dans File->Settings->Version control->github
  
 from flask import Flask
 import logging
- 
-app = Flask(__name__)
- 
-logging.basicConfig(filename='log/record.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
- 
-@app.route('/blogs')
+ # create the app
+ # app est une application Flask 
+ app = Flask(__name__)
+ #effecture la configuration de base du système du journalisation dans la fiche "log/record.log" logging.basicConfig(filename='log/record.log', level=logging.DEBUG, format=f'%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s')
+  # application route, décorateur pour lier une fonction à une URL@app.route('/blogs')
 def blog():
     app.logger.info('Info level log')
     app.logger.warning('Warning level log')
     return f"Welcome to the Blog"
- 
-app.run(host='localhost', debug=True)
+  #l'exectuion de l'application en localhostapp.run(host='localhost', debug=True)
 ``` 
  Ajouter une variable d'environnement FLASK_APP=blogs:
  

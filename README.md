@@ -3,29 +3,35 @@ Instruction pour la session de coaching
 # Exercice 1  - Scrum 
 Préparer le dashboard Scrum pour ce projet
 Projet -> New Projet -> choisir le modéle
-
+-> Créer la liste des tâches à effectuer
+ -> Faire un screenshot
 # Exercice 2  - Linux 
 Mettre à jour les packages de votre VM ubuntu:
-`sudo apt update`
-`sudo apt upgrade`
+`sudo apt-get update`
+`sudo apt-get upgrade`
 
 Vérifier la version de python3 déjà installée:
 `python3 --version`
 
 créer un alias nommé python valide pour le user ubuntu de votre VM:
 
-ouvrir le fichier .bashrc par la commande : `nano ./bashrc` et j'ajoute la ligne suivant `alias python='python3'`
+ouvrir le fichier .bashrc par la commande : `sudo nano ./bashrc` et j'ajoute la ligne suivant `alias python='python3'`
 vérifier en faisant  `python -V`
  installation flask:
  on installe pip avec la commande suivante: 
  `sudo apt intsall pip`
- Installer Flask:
+ Vérifier si pip est bien installé on tape la commande :
+
+`pip --version` 
+Installer Flask:
  `pip install flask`
+ Vérifier si flask est bien installé on tape la commande :
+ `flask --version`
  # Exercice 3  - Storage 
  
  Recherche le disque supplémentaire de 1Gb connecté à la VM:
  
- `fdisk -l` le disque est: /dev/vdc
+ `sudo fdisk -l` le disque est: /dev/vdc
  
  Formattez ce disque au format ext4:
  `mkfs -t ext4 /dev/vdc`

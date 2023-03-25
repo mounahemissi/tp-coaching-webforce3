@@ -33,6 +33,8 @@ Installer Flask:
  
  `sudo fdisk -l` le disque est: /dev/vdc
  
+ 
+ 
  Formattez ce disque au format ext4:
  `mkfs -t ext4 /dev/vdc`
  
@@ -140,3 +142,6 @@ fichier ansible-1.yaml
       state: present
     become: yes
     when: python_alias.stdout.find("Python 3") != -1
+    
+    2. Vérifier la version de python3 :
+     python3 --version

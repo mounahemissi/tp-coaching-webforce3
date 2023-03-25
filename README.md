@@ -96,7 +96,8 @@ Autoriser le port 30101
   `sudo ufw allow 30101`
   
   
- ## TP ansible 1 
+ ## TP ansible 1 Installation avec virtualenv :
+ 
  Nous allons créer un virtualenv python pour installer la derniere version 
 d'Ansible: on tape les commandes suivants:
 
@@ -177,8 +178,18 @@ on tape la commande:
  3. Créer un alias dans ~/.bashrc :
  
   `echo "aliaspython= python3" /home/ubuntu/.bashrc`
+  
 4. installer le package pip:
 
 `python get-pip.py`
 
+Testez votre script on tape la commande suivante: 
+
+`ansible-playbook -v -K ansible-1.yml`
+
 ## TP ansible 2 
+
+1. Analysez le fichier ansible-2-filtre.yml:
+tout d'abord on va ouvrir le fichier on tape la commande:
+`vi ansible-2-filtre.yml`
+

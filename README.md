@@ -193,3 +193,15 @@ Testez votre script on tape la commande suivante:
 tout d'abord on va ouvrir le fichier on tape la commande:
 `vi ansible-2-filtre.yml`
 
+Le fichier ansible-2-filtre.yml est un playbook Ansible qui contient deux tâches pour formater un disque.
+
+La première tâche est appelée "get disk structure" et utilise la commande fdisk -l pour obtenir la structure du disque. Le résultat est enregistré dans la variable "get_disk" à l'aide de la commande register.
+
+La deuxième tâche est appelée "pour la mise au point" et utilise le module debug pour afficher le nom du périphérique du disque en utilisant un filtre. Le filtre utilisé est "get_device", qui n'est pas défini dans ce playbook. Il est possible que ce filtre soit défini dans un autre fichier inclus ou dans un rôle.
+
+Le playbook est configuré pour s'exécuter sur la machine locale (localhost) et utilise l'option become pour exécuter les commandes en tant que superutilisateur (root).
+
+
+
+
+

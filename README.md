@@ -147,5 +147,8 @@ fichier ansible-1.yaml
 2. Vérifier la version de python3 :
 
   python3 --version 
-  3. Créer un alias dans ~/.bashrc :
+ 3. Créer un alias dans ~/.bashrc :
   echo "aliaspython= python3" /home/ubuntu/.bashrc
+4. installer le package pip:
+python get-pip.py
+## TP ansible 2 

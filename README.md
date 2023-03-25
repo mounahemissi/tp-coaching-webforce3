@@ -95,3 +95,48 @@ Autoriser le port 30101
   
   
  ## TP ansible 1 
+Créer un fichier ansible-1.yaml qui automatise l'exercice 2 ci-dessus.  
+1. Le script doit mettre à jour les packages ubuntu. 
+
+fichier ansible-1.yaml
+ ---
+- name: Mise à jour des packages et installation de Python 3
+  hosts: vm_ubuntu # remplacez par le nom de votre machine virtuelle Ubuntu
+  become: yes
+
+  tasks:
+  - name: Mettre à jour les packages
+    apt:
+      update_cache: yes
+      upgrade: dist
+
+  - name: Vérifier la version de Python 3
+    command: python3 --version
+    register: python_version
+    changed_when: false
+
+  - name: Créer un alias pour Python
+    shell: echo "alias python=python3" >> /home/ubuntu/.bashrc
+    args:
+      creates: /home/ubuntu/.bashrc
+    become_user: ubuntu
+
+  - name: Vérifier l'alias Python
+    shell: source /home/ubuntu/.bashrc && python --version
+    register: python_alias
+    changed_when: false
+
+  - name: Installer pip
+    when: python_version.stdout.find("Python 3") != -1
+    become: yes
+    apt:
+      name: python3-pip
+      state: present
+
+  - name: Installer Flask
+    pip:
+      name: flask
+      executable: pip3
+      state: present
+    become: yes
+    when: python_alias.stdout.find("Python 3") != -1

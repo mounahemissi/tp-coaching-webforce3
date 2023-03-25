@@ -143,5 +143,9 @@ fichier ansible-1.yaml
     become: yes
     when: python_alias.stdout.find("Python 3") != -1
     
-    2. Vérifier la version de python3 :
-     python3 --version
+    
+2. Vérifier la version de python3 :
+
+  python3 --version 
+  3. Créer un alias dans ~/.bashrc :
+  echo "aliaspython= python3" /home/ubuntu/.bashrc

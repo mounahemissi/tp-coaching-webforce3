@@ -129,7 +129,7 @@ on tape la commande:
 
 ` ---
 - name: Mise à jour des packages et installation de Python 3
-  hosts: vm_ubuntu # remplacez par le nom de votre machine virtuelle Ubuntu
+  hosts: vm_ubuntu 
   become: yes
 
   tasks:

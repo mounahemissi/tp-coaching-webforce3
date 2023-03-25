@@ -97,11 +97,26 @@ Autoriser le port 30101
   
   
  ## TP ansible 1 
-Créer un fichier ansible-1.yaml qui automatise l'exercice 2 ci-dessus.  
+ Nous allons créer un virtualenv python pour installer la derniere version 
+d'Ansible: on tape les commandes suivants:
+sh connect.sh`
+`cd ~/tp-coaching-webforce3`
+`python3 -m venv venv`  
+`source venv/bin/activate`  
+`pip3 install wheel`  
+`pip3 install --upgrade pip` 
+`pip3 install ansible`
+`pip3 install requests` 
+`pip3 install natsort` 
+`ansible --version` 
+Créer un fichier ansible-1.yaml qui automatise l'exercice 2 ci-dessus:
 1. Le script doit mettre à jour les packages ubuntu. 
 
 fichier ansible-1.yaml
- ---
+on tape la commande:
+`vi ansible-1.yml` 
+
+` ---
 - name: Mise à jour des packages et installation de Python 3
   hosts: vm_ubuntu # remplacez par le nom de votre machine virtuelle Ubuntu
   become: yes
@@ -141,14 +156,14 @@ fichier ansible-1.yaml
       executable: pip3
       state: present
     become: yes
-    when: python_alias.stdout.find("Python 3") != -1
+    when: python_alias.stdout.find("Python 3") != -1`
     
     
 2. Vérifier la version de python3 :
-
-  python3 --version 
+on tape la commande:
+  `python3 --version` 
  3. Créer un alias dans ~/.bashrc :
-  echo "aliaspython= python3" /home/ubuntu/.bashrc
+  `echo "aliaspython= python3" /home/ubuntu/.bashrc`
 4. installer le package pip:
-python get-pip.py
+`python get-pip.py`
 ## TP ansible 2 

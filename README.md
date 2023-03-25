@@ -93,3 +93,5 @@ Fermer le port 5000
 Autoriser le port 30101
   `sudo ufw allow 30101`
   
+  
+ ## TP ansible 1 

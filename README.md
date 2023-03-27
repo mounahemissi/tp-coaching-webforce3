@@ -12,9 +12,6 @@ Mettre à jour les packages de votre VM ubuntu:
 
 Vérifier la version de python3 déjà installée:
 `python3 --version`
-
-créer un alias nommé python valide pour le user ubuntu de votre VM:
-
 ouvrir le fichier .bashrc par la commande : `sudo nano ./bashrc` et j'ajoute la ligne suivant `alias python='python3'`
 vérifier en faisant  `python -V`
  installation flask:
@@ -126,6 +123,10 @@ fichier ansible-1.yaml
 on tape la commande:
 
 `vi ansible-1.yml` 
+
+![Capture d’écran 2023-03-25 à 15 51 31](https://user-images.githubusercontent.com/122799093/227932098-54cdbdfd-479a-463e-a2f3-566e610d740b.png)
+
+
 
 ` ---
 - name: Mise à jour des packages et installation de Python 3
